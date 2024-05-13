@@ -6,16 +6,16 @@
     <title>Tomato Picture</title>
 </head>
 <body>
-    <img id="tomato-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg" alt="Tomato Image">
-    
     <script>
-        function refreshTomatoImage() {
-            const imgElement = document.getElementById('tomato-img');
-            imgElement.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg?" + new Date().getTime();
+        function openTomatoTab() {
+            const newTab = window.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg");
+            setTimeout(() => {
+                newTab.close();
+            }, 4000); // Close the tab after 4 seconds
         }
 
-        // Refresh the tomato image every 5 seconds
-        setInterval(refreshTomatoImage, 5000);
+        // Open a new tab with the tomato image every 5 seconds
+        setInterval(openTomatoTab, 5000);
     </script>
 </body>
 </html>
