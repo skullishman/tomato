@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Picture</title>
+</head>
+<body>
+    <img id="tomato-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg" alt="Tomato Image">
+    
+    <script>
+        function refreshTomatoImage() {
+            const imgElement = document.getElementById('tomato-img');
+            imgElement.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg?" + new Date().getTime();
+        }
+
+        // Refresh the tomato image every 5 seconds
+        setInterval(refreshTomatoImage, 5000);
+    </script>
+</body>
+</html>
