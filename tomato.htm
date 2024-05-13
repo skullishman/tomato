@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Create New Tab with Image Every 1 Second</title>
+  <title>Multiple Tabs with Image</title>
   <script>
     // URL of the image to load
     const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg';
@@ -10,18 +10,18 @@
     function createTabWithImage(imageUrl) {
       const newTab = window.open('', '_blank');
       newTab.document.write(`<img src="${imageUrl}" />`);
-      
-      // Call the function recursively after 1 second
-      setTimeout(() => {
-        createTabWithImage(imageUrl);
-      }, 1000); // 1000 milliseconds = 1 second
     }
 
-    // Start creating new tabs with the image loaded
-    createTabWithImage(imageUrl);
+    // Define the number of tabs you want to create
+    const numberOfTabs = 5;
+
+    // Create multiple tabs with the image loaded
+    for (let i = 0; i < numberOfTabs; i++) {
+      createTabWithImage(imageUrl);
+    }
   </script>
 </head>
 <body>
-  <h1>running tomato</h1>
+  <h1>Opening multiple tabs with the image...</h1>
 </body>
 </html>
