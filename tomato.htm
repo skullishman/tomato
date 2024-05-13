@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomato Picture</title>
+    <title>Continuous Opening of New Tabs</title>
 </head>
 <body>
     <script>
-        function openTomatoTab() {
-            const newTab = window.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg");
-            setTimeout(() => {
-                newTab.close();
-            }, 4000); // Close the tab after 4 seconds
+        function openNewTab() {
+            window.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg', '_blank');
+            setTimeout(openNewTab, 1000); // Adjust the time interval in milliseconds here
         }
-
-        // Open a new tab with the tomato image every 5 seconds
-        setInterval(openTomatoTab, 5000);
+        openNewTab();
     </script>
 </body>
 </html>
