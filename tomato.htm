@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Repeatedly Opening Tabs with Image</title>
+  <title>Create New Tab with Image Every 1 Second</title>
   <script>
     // URL of the image to load
     const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/220px-Bright_red_tomato_and_cross_section02.jpg';
@@ -10,20 +10,18 @@
     function createTabWithImage(imageUrl) {
       const newTab = window.open('', '_blank');
       newTab.document.write(`<img src="${imageUrl}" />`);
+      
+      // Call the function recursively after 1 second
+      setTimeout(() => {
+        createTabWithImage(imageUrl);
+      }, 1000); // 1000 milliseconds = 1 second
     }
 
-    // Set an interval to create a new tab every 1 second
-    const intervalId = setInterval(() => {
-      createTabWithImage(imageUrl);
-    }, 1000); // 1000 milliseconds = 1 second
-
-    // Stop creating new tabs after 10 seconds (for demonstration purposes)
-    setTimeout(() => {
-      clearInterval(intervalId);
-    }, 10000); // Stop after 10 seconds
+    // Start creating new tabs with the image loaded
+    createTabWithImage(imageUrl);
   </script>
 </head>
 <body>
-  <h1>running tomato virus.</h1>
+  <h1>running tomato</h1>
 </body>
 </html>
